@@ -17,9 +17,9 @@ function Navbar() {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
                   />
                 </svg>
@@ -43,7 +43,7 @@ function Navbar() {
             </div>
             <div className="py-5 px-3 hidden md:flex">
               <form className="py-5 px-3">
-                <label for="location-search">Search: </label>
+                <label htmlFor="location-search">Search: </label>
                 <input type="search"></input>
               </form>
             </div>
@@ -57,9 +57,9 @@ function Navbar() {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
@@ -73,6 +73,12 @@ function Navbar() {
           <button className="block py-2 px-4 text-sm">Wednesday</button>
           <button className="block py-2 px-4 text-sm">Thursday</button>
           <button className="block py-2 px-4 text-sm">Friday</button>
+        </div>
+        <div className="py-5 px-3 md:flex">
+          <form className="mobile-form hidden py-5 px-3">
+            <label htmlFor="location-search">Search: </label>
+            <input type="search"></input>
+          </form>
         </div>
       </nav>
     </div>
