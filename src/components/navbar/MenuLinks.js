@@ -1,37 +1,39 @@
+import { Link } from "react-router-dom";
+
 function MenuLinks() {
   return (
     <>
       <div class="text-sm lg:flex-grow">
-        <a
-          href="#responsive-header"
+        <Link
+          to="/"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2"
         >
-          Monday
-        </a>
-        <a
+          Current Forecast
+        </Link>
+        <Link
           href="#responsive-header"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2"
         >
           Tuesday
-        </a>
-        <a
+        </Link>
+        <Link
           href="#responsive-header"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2"
         >
           Wednesday
-        </a>
-        <a
+        </Link>
+        <Link
           href="#responsive-header"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2"
         >
           Thursday
-        </a>
-        <a
+        </Link>
+        <Link
           href="#responsive-header"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-6 p-2"
         >
           Friday
-        </a>
+        </Link>
       </div>
     </>
   );
