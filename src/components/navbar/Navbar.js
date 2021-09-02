@@ -1,84 +1,39 @@
+import { useState } from "react";
+import CloudIcon from "@material-ui/icons/Cloud";
+import MenuIcon from "@material-ui/icons/Menu";
 function Navbar() {
-  const toggleMobileMenu = (event) => {
-    console.log(event);
-  };
   return (
     <div>
-      <nav className="bg-gray-300">
-        <div className="px-8 mx-auto border">
-          <div className="flex justify-around space-x-4">
-            <div>
-              <button className="flex items-center py-5 px-3 text-gray-700">
-                <svg
-                  className="h-6 w-6 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                </svg>
-                <span className="py-5 px-3 font-bold">Weather App</span>
-              </button>
-            </div>
-            <div className="hidden md:flex items-center space-x-1">
-              <button className="py-5 px-3 text-gray-700 hover:text-gray-900">
-                Today
-              </button>
-              <button className="py-5 px-3 text-gray-700 hover:text-gray-900">
-                Tuesday
-              </button>
-              <button className="py-5 px-3 text-gray-700 hover:text-gray-900">
-                Wednesday
-              </button>
-              <button className="py-5 px-3 text-gray-700 hover:text-gray-900">
-                Thursday
-              </button>
-              <button className="py-5 px-3">Friday</button>
-            </div>
-            <div className="py-5 px-3 hidden md:flex">
-              <form className="py-5 px-3">
-                <label htmlFor="location-search">Search: </label>
-                <input type="search"></input>
-              </form>
-            </div>
-            <div className="md:hidden flex items-center">
-              <button className="mobile-menu-button" onClick={toggleMobileMenu}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
+      <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+        <div className="flex items-center flex-shrink-0 text-black mr-6">
+          <CloudIcon />
+          <span className="font-semibold text-xl tracking-tight text-black">
+            Weather App
+          </span>
+        </div>
+        <div className="block lg:hidden">
+          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-black">
+            <MenuIcon />
+          </button>
+        </div>
+        <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div className="text-sm lg:flex-grow">
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-black mr-4">
+              Monday
+            </a>
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-black mr-4">
+              Tueday
+            </a>
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-black mr-4">
+              Wednesday
+            </a>
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-black mr-4">
+              Thursday
+            </a>
+            <a className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-black mr-4">
+              Friday
+            </a>
           </div>
-        </div>
-        <div className="mobile-menu hidden">
-          <button className="block py-2 px-4 text-sm">Today</button>
-          <button className="block py-2 px-4 text-sm">Tuesday</button>
-          <button className="block py-2 px-4 text-sm">Wednesday</button>
-          <button className="block py-2 px-4 text-sm">Thursday</button>
-          <button className="block py-2 px-4 text-sm">Friday</button>
-        </div>
-        <div className="py-5 px-3 md:flex">
-          <form className="mobile-form hidden py-5 px-3">
-            <label htmlFor="location-search">Search: </label>
-            <input type="search"></input>
-          </form>
         </div>
       </nav>
     </div>
