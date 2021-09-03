@@ -4,7 +4,7 @@ function CurrentForecastPage() {
 	const getCurrentForecast = () => {
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition(function (position) {
-				const apiKey = process.env.WEATHER_API_KEY;
+				const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 				const usersLatitude = position.coords.latitude;
 				const usersLongitude = position.coords.longitude;
 				axios
