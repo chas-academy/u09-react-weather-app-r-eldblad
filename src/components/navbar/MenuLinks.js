@@ -5,7 +5,7 @@ function MenuLinks() {
 		<>
 			<div className="text-sm lg:flex-grow">
 				<Link
-					to="/"
+					to="/current-forecast"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
 					Current Forecast
 				</Link>

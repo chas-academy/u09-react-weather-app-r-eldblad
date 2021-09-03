@@ -1,15 +1,28 @@
+const axios = require("axios");
+
 function CurrentForecastPage() {
-	const getCoordinatesFromUser = () => {
+	const getCurrentForecast = () => {
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition(function (position) {
+				const apiKey = process.env.WEATHER_API_KEY;
 				const usersLatitude = position.coords.latitude;
 				const usersLongitude = position.coords.longitude;
+				axios
+					.get(
+						`https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&appid=${apiKey}`
+					)
+					.then((response) => {
+						console.log(response);
+					});
 			});
 		} else {
-			console.log("Go fuck yourself!");
+			console.log("Geolocation is disabled");
 		}
 	};
-	return <div>{getCoordinatesFromUser()}</div>;
+
+	getCurrentForecast();
+
+	return <div></div>;
 }
 
 export default CurrentForecastPage;
