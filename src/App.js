@@ -1,8 +1,8 @@
-import "./App.css";
-import Navbar from "./components/navbar/Navbar";
+import './App.css';
+import Navbar from './components/navbar/Navbar';
 
-import { Route } from "react-router-dom";
-import CurrentForecastPage from "./pages/CurrentForecast";
+import { Route } from 'react-router-dom';
+import CurrentForecastPage from './pages/CurrentForecast';
 function App() {
   return (
     <div>
