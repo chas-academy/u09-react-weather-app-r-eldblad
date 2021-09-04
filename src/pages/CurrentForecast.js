@@ -9,7 +9,7 @@ function CurrentForecastPage() {
 			navigator.geolocation.getCurrentPosition(function (position) {
 				const usersLatitude = position.coords.latitude;
 				const usersLongitude = position.coords.longitude;
-				const apiKey = process.env.WEATHER_API_KEY;
+				const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 				const metric = "metric";
 				url = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&appid=${apiKey}`;
 				axios.get(url).then((response) => {
@@ -31,7 +31,7 @@ function CurrentForecastPage() {
 						{weather.timezone}
 					</h1>
 					<h2 className="mx:text-4x1 font-sans font-semibold">
-						{weather.current.temp}&#8451;{" "}
+						{weather.current.temp}&#8451;
 					</h2>
 					<p>
 						<em>
@@ -44,6 +44,9 @@ function CurrentForecastPage() {
 					</p>
 					<p>
 						<em>Humidity: {weather.current.humidity}%</em>
+					</p>
+					<p>
+						<em>({weather.current.weather[0].main})</em>
 					</p>
 				</section>
 			</div>
