@@ -14,7 +14,7 @@ function CurrentForecastPage() {
 				const openWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
 				const geolocationKey = process.env.REACT_APP_GOOGLE_GEOLOCATION_API_KEY;
 				const metric = "metric";
-				weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&appid=${openWeatherKey}`;
+				weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${openWeatherKey}`;
 				geolocationUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${usersLatitude},${usersLongitude}&key=${geolocationKey}`;
 				axios.get(weatherUrl).then((response) => {
 					setWeather(response.data);
@@ -43,19 +43,18 @@ function CurrentForecastPage() {
 					</h2>
 					<p>
 						<em>
-							Feels like {weather.current.feels_like}
+							Känns som {weather.current.feels_like}
 							&#8451;
 						</em>
 					</p>
 					<p>
-						<em>Windspeed: {weather.current.wind_speed} m/s</em>
+						<em>Vindstyrka: {weather.current.wind_speed} m/s</em>
 					</p>
 					<p>
-						<em>Humidity: {weather.current.humidity}%</em>
+						<em>Luftfuktighet: {weather.current.humidity}%</em>
 					</p>
 					<p>
-						<em>({weather.current.weather[0].main})</em>
-						<em></em>
+						<em>({weather.current.weather[0].description})</em>
 					</p>
 				</section>
 			</div>

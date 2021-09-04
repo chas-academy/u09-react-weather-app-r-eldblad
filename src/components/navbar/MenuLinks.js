@@ -7,27 +7,27 @@ function MenuLinks() {
 				<Link
 					to="/current-forecast"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					Current Forecast
+					Aktuell Prognos
 				</Link>
 				<Link
 					to="/#"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					Tuesday
+					Tisdag
 				</Link>
 				<Link
 					to="/#"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					Wednesday
+					Onsdag
 				</Link>
 				<Link
 					to="/#"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					Thursday
+					Torsdag
 				</Link>
 				<Link
 					to="/#"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-6 p-2">
-					Friday
+					Fredag
 				</Link>
 			</div>
 		</>
