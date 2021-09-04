@@ -34,9 +34,9 @@ function CurrentForecastPage() {
 	if (weather && geolocation)
 		return (
 			<div>
-				<section className="container mx-auto p-5 text-center sm:text-left">
+				<section className="container mx-auto p-3 text-center sm:text-left">
 					<h1 className="sm:text-5xl mx:text-3x1 font-sans font-bold">
-						{geolocation.results[0].formatted_address}
+						{geolocation.results[5].formatted_address}
 					</h1>
 					<h2 className="mx:text-4x1 font-sans font-semibold">
 						{weather.current.temp}&#8451;

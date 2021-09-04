@@ -17,11 +17,13 @@ function Navbar() {
 		<div>
 			<nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
 				<Link to="/">
-					<div className="flex items-center flex-shrink-0 text-black mr-6">
+					<div className="flex items-center flex-shrink-0 text-black ml-6">
 						<CloudIcon />
-						<span className="font-semibold text-xl tracking-tight text-black">
-							Weather App
-						</span>
+						<div className="ml-1">
+							<h1 className="font-semibold text-x3 tracking-tight text-black">
+								Weather App
+							</h1>
+						</div>
 					</div>
 				</Link>
 				<div className="block lg:hidden">
@@ -37,7 +39,7 @@ function Navbar() {
 					}`}>
 					<MenuLinks />
 				</div>
-				<div className={`${"block"} ${navbarOpen ? "hidden" : ""}`}>
+				<div className="mx-auto mt-2">
 					<Search />
 				</div>
 			</nav>

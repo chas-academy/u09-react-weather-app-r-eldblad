@@ -4,11 +4,11 @@ function Search() {
 	return (
 		<>
 			<div>
-				<form>
+				<form className=" bg-white shadow-md rounded px-3 pt-3 pb-3">
 					<input
-						className="shadow appearance-none border rounded py-2 px-3 mr-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="justify-center items-center shadow appearance-none border rounded py-2 px-3 mr-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						type="text"
-						placeholder="Search location..."
+						placeholder="Sök plats..."
 						name="search"></input>
 					<button type="submit">
 						<SearchIcon />
