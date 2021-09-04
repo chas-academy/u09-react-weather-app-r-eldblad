@@ -9,9 +9,9 @@ function CurrentForecastPage() {
 			navigator.geolocation.getCurrentPosition(function (position) {
 				const usersLatitude = position.coords.latitude;
 				const usersLongitude = position.coords.longitude;
-				const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+				const apiKey = process.env.WEATHER_API_KEY;
 				const metric = "metric";
-				url = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${apiKey}`;
+				url = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&appid=${apiKey}`;
 				axios.get(url).then((response) => {
 					setWeather(response.data);
 				});
