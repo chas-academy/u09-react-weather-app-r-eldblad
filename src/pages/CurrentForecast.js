@@ -26,12 +26,20 @@ function CurrentForecastPage() {
 	if (weather)
 		return (
 			<div>
-				<h1>{weather.timezone}</h1>
-				<h2>{weather.current.temp}&#8451; </h2>
-				<em>
-					Feels like {weather.current.feels_like}
-					&#8451;
-				</em>
+				<div className="container mx-auto p-5 text-center sm:text-left">
+					<h1 className="sm:text-5xl mx:text-3x1 font-sans font-bold">
+						{weather.timezone}
+					</h1>
+					<h2 className="mx:text-3x1 font-sans">
+						{weather.current.temp}&#8451;{" "}
+					</h2>
+					<p>
+						<em>
+							Feels like {weather.current.feels_like}
+							&#8451;
+						</em>
+					</p>
+				</div>
 			</div>
 		);
 
