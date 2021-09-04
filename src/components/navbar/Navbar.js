@@ -4,6 +4,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import MenuLinks from "./MenuLinks";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -15,12 +16,14 @@ function Navbar() {
 	return (
 		<div>
 			<nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-				<div className="flex items-center flex-shrink-0 text-black mr-6">
-					<CloudIcon />
-					<span className="font-semibold text-xl tracking-tight text-black">
-						Weather App
-					</span>
-				</div>
+				<Link to="/">
+					<div className="flex items-center flex-shrink-0 text-black mr-6">
+						<CloudIcon />
+						<span className="font-semibold text-xl tracking-tight text-black">
+							Weather App
+						</span>
+					</div>
+				</Link>
 				<div className="block lg:hidden">
 					<button
 						className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-black"
