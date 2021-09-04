@@ -11,7 +11,7 @@ function CurrentForecastPage() {
 				const usersLongitude = position.coords.longitude;
 				const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
 				const metric = "metric";
-				url = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&appid=${apiKey}`;
+				url = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${apiKey}`;
 				axios.get(url).then((response) => {
 					setWeather(response.data);
 				});
@@ -26,11 +26,11 @@ function CurrentForecastPage() {
 	if (weather)
 		return (
 			<div>
-				<div className="container mx-auto p-5 text-center sm:text-left">
+				<section className="container mx-auto p-5 text-center sm:text-left">
 					<h1 className="sm:text-5xl mx:text-3x1 font-sans font-bold">
 						{weather.timezone}
 					</h1>
-					<h2 className="mx:text-3x1 font-sans">
+					<h2 className="mx:text-4x1 font-sans font-semibold">
 						{weather.current.temp}&#8451;{" "}
 					</h2>
 					<p>
@@ -39,7 +39,13 @@ function CurrentForecastPage() {
 							&#8451;
 						</em>
 					</p>
-				</div>
+					<p>
+						<em>Windspeed: {weather.current.wind_speed} m/s</em>
+					</p>
+					<p>
+						<em>Humidity: {weather.current.humidity}%</em>
+					</p>
+				</section>
 			</div>
 		);
 
