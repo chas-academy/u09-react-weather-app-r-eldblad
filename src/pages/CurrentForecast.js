@@ -55,6 +55,7 @@ function CurrentForecastPage() {
 					</p>
 					<p>
 						<em>({weather.current.weather[0].main})</em>
+						<em>BOOM!</em>
 					</p>
 				</section>
 			</div>
