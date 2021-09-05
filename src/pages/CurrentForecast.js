@@ -14,22 +14,28 @@ function CurrentForecastPage() {
 				const openWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
 				const geolocationKey = process.env.REACT_APP_GOOGLE_GEOLOCATION_API_KEY;
 				const metric = "metric";
+
+				// Axios http get requests
 				weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${openWeatherKey}`;
 				geolocationUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${usersLatitude},${usersLongitude}&key=${geolocationKey}`;
-				axios.get(weatherUrl).then((response) => {
-					setWeather(response.data);
-				});
-				axios.get(geolocationUrl).then((response) => {
-					setGeolocation(response.data);
-				});
+				const weatherRequest = axios.get(weatherUrl);
+				const geolocationRequest = axios.get(geolocationUrl);
+
+				axios.all([weatherRequest, geolocationRequest]).then(
+					axios.spread((...responses) => {
+						const weatherResponse = responses[0];
+						const geolocationResponse = responses[1];
+						setWeather(weatherResponse.data);
+						setGeolocation(geolocationResponse.data);
+						console.log(weather);
+						console.log(geolocation);
+					})
+				);
 			});
 		} else {
 			console.log("Geolocation is disabled");
 		}
 	}, [weatherUrl, geolocationUrl]);
-
-	console.log(weather);
-	console.log(geolocation);
 
 	if (weather && geolocation)
 		return (
