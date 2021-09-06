@@ -10,14 +10,14 @@ function MenuLinks() {
 					Aktuell Prognos
 				</Link>
 				<Link
-					to="/#"
+					to="/hourly-forecast"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					Tisdag
+					Timvis Prognos
 				</Link>
 				<Link
-					to="/#"
+					to="/fiveday-forecast"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					Onsdag
+					5-dagars Prognos
 				</Link>
 				<Link
 					to="/#"

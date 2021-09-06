@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function CurrentForecastPage() {
-	let weatherUrl;
-	let geolocationUrl;
+const CurrentForecastPage = () => {
 	const [weather, setWeather] = useState(null);
 	const [geolocation, setGeolocation] = useState(null);
 	useEffect(() => {
@@ -16,8 +14,8 @@ function CurrentForecastPage() {
 				const metric = "metric";
 
 				// Axios http get requests
-				weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${openWeatherKey}`;
-				geolocationUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${usersLatitude},${usersLongitude}&key=${geolocationKey}`;
+				const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${openWeatherKey}`;
+				const geolocationUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${usersLatitude},${usersLongitude}&key=${geolocationKey}`;
 				const weatherRequest = axios.get(weatherUrl);
 				const geolocationRequest = axios.get(geolocationUrl);
 
@@ -27,15 +25,13 @@ function CurrentForecastPage() {
 						const geolocationResponse = responses[1];
 						setWeather(weatherResponse.data);
 						setGeolocation(geolocationResponse.data);
-						console.log(weather);
-						console.log(geolocation);
 					})
 				);
 			});
 		} else {
 			console.log("Geolocation is disabled");
 		}
-	}, [weatherUrl, geolocationUrl]);
+	}, []);
 
 	if (weather && geolocation)
 		return (
@@ -67,6 +63,6 @@ function CurrentForecastPage() {
 		);
 
 	return <div></div>;
-}
+};
 
 export default CurrentForecastPage;
