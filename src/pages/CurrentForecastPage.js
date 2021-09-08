@@ -16,7 +16,10 @@ const CurrentForecastPage = (props) => {
 						</em>
 					</p>
 					<p>
-						<em>Vindstyrka: {props.weatherState.current.wind_speed} m/s</em>
+						<em>
+							Vindstyrka: {Math.round(props.weatherState.current.wind_speed)}{" "}
+							m/s
+						</em>
 					</p>
 					<p>
 						<em>Luftfuktighet: {props.weatherState.current.humidity}%</em>
