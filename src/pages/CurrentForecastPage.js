@@ -25,7 +25,11 @@ const CurrentForecastPage = (props) => {
 					<p>
 						<em>Luftfuktighet: {props.weatherState.current.humidity}%</em>
 					</p>
-					<img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+					<img
+						title={props.weatherState.current.weather[0].description}
+						alt={props.weatherState.current.weather[0].description}
+						src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+					/>
 				</section>
 			</div>
 		);
