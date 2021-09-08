@@ -25,6 +25,11 @@ const HourlyForecast = (props) => {
 							className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
 							Luftfuktighet
 						</th>
+						<th
+							scope="col"
+							className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+							Vindstyrka
+						</th>
 					</tr>
 				</thead>
 				<tbody className="bg-white divide-y divide-gray-200">
@@ -45,7 +50,16 @@ const HourlyForecast = (props) => {
 										{Math.round(data.feels_like)}&#8451;
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{data.humidity}%
+										{data.humidity}&#37;
+									</td>
+									<td className="px-6 py-4 whitespace-nowrap">
+										{Math.round(data.wind_speed)} m/s
+									</td>
+									<td className="px-6 py-4 whitespace-nowrap">
+										<img
+											src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+											title={data.weather[0].description}
+											alt="weather-icon"></img>
 									</td>
 								</tr>
 							</>

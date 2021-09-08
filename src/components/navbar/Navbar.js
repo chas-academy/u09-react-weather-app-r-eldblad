@@ -15,7 +15,7 @@ function Navbar() {
 
 	return (
 		<>
-			<nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+			<nav className="flex items-center mx-auto justify-evenly flex-wrap bg-teal-500 p-6">
 				<Link to="/">
 					<div className="flex items-center flex-shrink-0 text-black ml-6">
 						<CloudIcon />
