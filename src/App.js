@@ -19,9 +19,10 @@ function App() {
 				const openWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
 				const geolocationKey = process.env.REACT_APP_GOOGLE_GEOLOCATION_API_KEY;
 				const metric = "metric";
+				const lang = "sv";
 
 				// Axios http get requests
-				const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=sv&appid=${openWeatherKey}`;
+				const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${usersLatitude}&lon=${usersLongitude}&units=${metric}&lang=${lang}&appid=${openWeatherKey}`;
 				const geolocationUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${usersLatitude},${usersLongitude}&key=${geolocationKey}`;
 				const weatherRequest = axios.get(weatherUrl);
 				const geolocationRequest = axios.get(geolocationUrl);

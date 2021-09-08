@@ -14,7 +14,7 @@ function Navbar() {
 	};
 
 	return (
-		<div>
+		<>
 			<nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
 				<Link to="/">
 					<div className="flex items-center flex-shrink-0 text-black ml-6">
@@ -43,7 +43,7 @@ function Navbar() {
 					<Search />
 				</div>
 			</nav>
-		</div>
+		</>
 	);
 }
 
