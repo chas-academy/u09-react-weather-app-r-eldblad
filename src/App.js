@@ -1,12 +1,12 @@
-import "./App.css";
+// Component imports
 import Navbar from "./components/navbar/Navbar";
-import { useEffect, useState } from "react";
-import axios from "axios";
-
-import { Route, Switch } from "react-router-dom";
 import CurrentForecastPage from "./pages/CurrentForecastPage";
 import HourlyForecastPage from "./pages/HourlyForecastPage";
 import FiveDayForecastPage from "./pages/FiveDayForecastPage";
+// Misc imports
+import { Route, Switch } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
 	const [weather, setWeather] = useState(null);
@@ -25,7 +25,6 @@ function App() {
 				const geolocationUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${usersLatitude},${usersLongitude}&key=${geolocationKey}`;
 				const weatherRequest = axios.get(weatherUrl);
 				const geolocationRequest = axios.get(geolocationUrl);
-
 				axios.all([weatherRequest, geolocationRequest]).then(
 					axios.spread((...responses) => {
 						const weatherResponse = responses[0];
@@ -50,7 +49,7 @@ function App() {
 					<HourlyForecastPage weatherState={weather} geoState={geolocation} />
 				</Route>
 				<Route path="/fiveday-forecast">
-					<FiveDayForecastPage />
+					<FiveDayForecastPage weatherState={weather} geoState={geolocation} />
 				</Route>
 			</Switch>
 		</div>
