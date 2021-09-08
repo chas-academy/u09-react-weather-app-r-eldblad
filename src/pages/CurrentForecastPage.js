@@ -7,11 +7,11 @@ const CurrentForecastPage = (props) => {
 						{props.geoState.results[5].formatted_address}
 					</h1>
 					<h2 className="mx:text-4x1 font-sans font-semibold">
-						{props.weatherState.current.temp}&#8451;
+						{Math.round(props.weatherState.current.temp)}&#8451;
 					</h2>
 					<p>
 						<em>
-							Känns som {props.weatherState.current.feels_like}
+							Känns som {Math.round(props.weatherState.current.feels_like)}
 							&#8451;
 						</em>
 					</p>
@@ -28,7 +28,7 @@ const CurrentForecastPage = (props) => {
 			</div>
 		);
 
-	return <div>hello</div>;
+	return <></>;
 };
 
 export default CurrentForecastPage;

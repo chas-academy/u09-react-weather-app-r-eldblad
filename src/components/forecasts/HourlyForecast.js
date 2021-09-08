@@ -39,10 +39,10 @@ const HourlyForecast = (props) => {
 										})}
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{data.temp}&#8451;
+										{Math.round(data.temp)}&#8451;
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{data.feels_like}&#8451;
+										{Math.round(data.feels_like)}&#8451;
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
 										{data.humidity}%
