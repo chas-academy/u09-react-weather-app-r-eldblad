@@ -1,4 +1,5 @@
 const CurrentForecastPage = (props) => {
+	const icon = props.weatherState.current.weather[0].icon;
 	if (props.weatherState && props.geoState)
 		return (
 			<div>
@@ -24,9 +25,7 @@ const CurrentForecastPage = (props) => {
 					<p>
 						<em>Luftfuktighet: {props.weatherState.current.humidity}%</em>
 					</p>
-					<p>
-						{<em>({props.weatherState.current.weather[0].description})</em>}
-					</p>
+					<img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
 				</section>
 			</div>
 		);
