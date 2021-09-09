@@ -62,9 +62,6 @@ function Search() {
 					onChange={handleInput}
 					onKeyPress={handleEnterKeyPressed}
 					value={searchTerm}></input>
-				<button type="submit">
-					<SearchIcon />
-				</button>
 			</form>
 		</div>
 	);
