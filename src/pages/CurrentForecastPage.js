@@ -11,7 +11,7 @@ const CurrentForecastPage = (props) => {
 					<div className="flex items-center justify-center">
 						<img
 							title={props.weatherState.current.weather[0].description}
-							src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+							src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
 							alt="weather-icon"
 						/>
 						<p>{props.weatherState.current.weather[0].description}</p>

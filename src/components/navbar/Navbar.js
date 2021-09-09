@@ -3,8 +3,8 @@ import CloudIcon from "@material-ui/icons/Cloud";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 import MenuLinks from "./MenuLinks";
-import Search from "./Search";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 function Navbar() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -39,9 +39,7 @@ function Navbar() {
 					}`}>
 					<MenuLinks />
 				</div>
-				<div className="mx-auto mt-2">
-					<Search />
-				</div>
+				<Search />
 			</nav>
 		</>
 	);
