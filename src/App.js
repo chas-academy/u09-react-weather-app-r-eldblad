@@ -1,6 +1,5 @@
 // Component imports
 import Navbar from "./components/navbar/Navbar";
-import Search from "./components/navbar/Search";
 import CurrentForecastPage from "./pages/CurrentForecastPage";
 import HourlyForecastPage from "./pages/HourlyForecastPage";
 import FiveDayForecastPage from "./pages/FiveDayForecastPage";
@@ -8,7 +7,7 @@ import FiveDayForecastPage from "./pages/FiveDayForecastPage";
 import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import SearchContent from "./components/navbar/SearchContent";
+import SearchContentPage from "./pages/SearchContentPage";
 
 function App() {
 	const [weather, setWeather] = useState(null);
@@ -55,6 +54,9 @@ function App() {
 				</Route>
 				<Route path="/fiveday-forecast">
 					<FiveDayForecastPage weatherState={weather} geoState={geolocation} />
+				</Route>
+				<Route path="/search-content">
+					<SearchContentPage />
 				</Route>
 			</Switch>
 		</div>

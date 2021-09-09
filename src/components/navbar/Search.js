@@ -1,12 +1,12 @@
 import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
-
 import { useState } from "react";
-import SearchContent from "./SearchContent";
+import { useHistory } from "react-router-dom";
 
 function Search() {
 	const [searchResponse, setSearchResponse] = useState(null);
 	const [searchTerm, setSearchTerm] = useState("");
+	const history = useHistory();
 
 	const handleInput = (e) => {
 		const term = e.target.value;
@@ -16,11 +16,18 @@ function Search() {
 	const handleEnterKeyPressed = (e) => {
 		if (e.key === "Enter") {
 			const openWeatherKey = process.env.REACT_APP_WEATHER_API_KEY;
-			const searchLocationUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${openWeatherKey}`;
+			const searchLocationUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&lang=sv&units=metric&appid=${openWeatherKey}`;
 			axios.get(searchLocationUrl).then((response) => {
 				setSearchResponse(response);
+				console.log(response);
+				history.push({
+					pathname: "/search-content",
+					state: { weather: response.data },
+				});
+				//history.push("/search-content", { state: { response } });
 			});
-			console.log(searchResponse);
+			//console.log(searchResponse);
+
 			e.preventDefault();
 		}
 	};
@@ -40,7 +47,6 @@ function Search() {
 							value={searchTerm}></input>
 					</form>
 				</div>
-				<SearchContent searchedLocation={searchResponse} />
 			</>
 		);
 	}
