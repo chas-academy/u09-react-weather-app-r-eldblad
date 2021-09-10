@@ -15,9 +15,9 @@ function MenuLinks() {
 					Timvis Prognos
 				</Link>
 				<Link
-					to="/fiveday-forecast"
+					to="/sevenday-forecast"
 					className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:shadow mr-4 p-2">
-					5-dagars Prognos
+					7-dagars Prognos
 				</Link>
 			</div>
 		</>

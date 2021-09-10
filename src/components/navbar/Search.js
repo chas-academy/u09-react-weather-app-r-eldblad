@@ -1,4 +1,3 @@
-import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
