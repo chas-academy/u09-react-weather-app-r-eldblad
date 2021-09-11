@@ -19,7 +19,7 @@ function App() {
 	const handleToggle = () => {
 		setUnit(unit === "metric" ? "imperial" : "metric");
 		setUnitIcon(unit === "metric" ? "&#8457;" : "&#8451;");
-		setWindSpeedUnit(unit === "metric" ? "m/h" : "m/s");
+		setWindSpeedUnit(unit === "metric" ? "mph" : "m/s");
 	};
 
 	useEffect(() => {
