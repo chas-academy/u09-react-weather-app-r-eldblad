@@ -8,7 +8,11 @@ const SevenDayForecastPage = (props) => {
 					{props.geoState.results[5].formatted_address}
 				</h1>
 			</section>
-			<SevenDayForecast weatherState={props.weatherState} />
+			<SevenDayForecast
+				weatherState={props.weatherState}
+				selectedUnitIcon={props.selectedUnitIcon}
+				selectedWindSpeedUnit={props.selectedWindSpeedUnit}
+			/>
 		</div>
 	);
 };

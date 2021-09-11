@@ -23,10 +23,7 @@ function Search() {
 					pathname: "/search-content",
 					state: { weather: response.data },
 				});
-				//history.push("/search-content", { state: { response } });
 			});
-			//console.log(searchResponse);
-
 			e.preventDefault();
 		}
 	};

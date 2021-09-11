@@ -1,5 +1,6 @@
 const CurrentForecastPage = (props) => {
 	const icon = props.weatherState.current.weather[0].icon;
+
 	if (props.weatherState && props.geoState)
 		return (
 			<div>
@@ -18,17 +19,24 @@ const CurrentForecastPage = (props) => {
 					</div>
 					<div>
 						<p className="text-4xl font-semibold text-center">
-							{Math.round(props.weatherState.current.temp)}&#8451;
+							{Math.round(props.weatherState.current.temp)}
+							<span
+								dangerouslySetInnerHTML={{
+									__html: props.selectedUnitIcon,
+								}}></span>
 						</p>
 						<p className="text-2xl mb-3 text-center">
 							Känns som {Math.round(props.weatherState.current.feels_like)}
-							&#8451;
+							<span
+								dangerouslySetInnerHTML={{
+									__html: props.selectedUnitIcon,
+								}}></span>
 						</p>
 					</div>
 					<div className="mb-5 font-semibold">
 						<p className="text-center">
-							Vindstyrka: {Math.round(props.weatherState.current.wind_speed)}{" "}
-							m/s
+							Vindstyrka: {Math.round(props.weatherState.current.wind_speed)}
+							{props.selectedWindSpeedUnit}
 						</p>
 						<p className="text-center">
 							Luftfuktighet: {props.weatherState.current.humidity}%

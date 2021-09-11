@@ -8,7 +8,11 @@ const HourlyForecastPage = (props) => {
 					{props.geoState.results[5].formatted_address}
 				</h1>
 			</section>
-			<HourlyForecast weatherState={props.weatherState} />
+			<HourlyForecast
+				weatherState={props.weatherState}
+				selectedUnitIcon={props.selectedUnitIcon}
+				selectedWindSpeedUnit={props.selectedWindSpeedUnit}
+			/>
 		</div>
 	);
 };

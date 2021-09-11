@@ -49,16 +49,25 @@ const SevenDayForecast = (props) => {
 										{days[new Date(data.dt * 1000).getDay()]}
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{Math.round(data.temp.max)}&#8451;
+										{Math.round(data.temp.max)}
+										<span
+											dangerouslySetInnerHTML={{
+												__html: props.selectedUnitIcon,
+											}}></span>
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{Math.round(data.temp.min)}&#8451;
+										{Math.round(data.temp.min)}
+										<span
+											dangerouslySetInnerHTML={{
+												__html: props.selectedUnitIcon,
+											}}></span>
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
 										{data.humidity}&#37;
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{Math.round(data.wind_speed)} m/s
+										{Math.round(data.wind_speed)}
+										{props.selectedWindSpeedUnit}
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
 										<img

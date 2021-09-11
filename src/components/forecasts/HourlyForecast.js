@@ -44,16 +44,25 @@ const HourlyForecast = (props) => {
 										})}
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{Math.round(data.temp)}&#8451;
+										{Math.round(data.temp)}
+										<span
+											dangerouslySetInnerHTML={{
+												__html: props.selectedUnitIcon,
+											}}></span>
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{Math.round(data.feels_like)}&#8451;
+										{Math.round(data.feels_like)}
+										<span
+											dangerouslySetInnerHTML={{
+												__html: props.selectedUnitIcon,
+											}}></span>
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
 										{data.humidity}&#37;
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
-										{Math.round(data.wind_speed)} m/s
+										{Math.round(data.wind_speed)}
+										{props.selectedWindSpeedUnit}
 									</td>
 									<td className="px-6 py-4 whitespace-nowrap">
 										<img
