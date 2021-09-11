@@ -29,10 +29,11 @@ const SearchContentPage = () => {
 						</div>
 						<div>
 							<p className="text-4xl font-semibold text-center">
-								{Math.round(searchResponse.weather.main.temp)}
+								{Math.round(searchResponse.weather.main.temp)}&#8451;
 							</p>
 							<p className="text-2xl mb-3 text-center">
-								Känns som {Math.round(searchResponse.weather.main.feels_like)};
+								Känns som {Math.round(searchResponse.weather.main.feels_like)}
+								&#8451;
 							</p>
 						</div>
 						<div className="mb-5 font-semibold">
