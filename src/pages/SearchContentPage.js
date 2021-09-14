@@ -18,6 +18,8 @@ const SearchContentPage = () => {
 					<section className="container mx-auto">
 						<h1 className="text-3xl text-center font-bold sm:text-6xl">
 							{searchResponse.weather.name}
+							{", "}
+							{searchResponse.weather.sys.country}
 						</h1>
 						<div className="flex items-center justify-center">
 							<img
