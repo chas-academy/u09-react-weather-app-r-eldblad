@@ -21,7 +21,7 @@ function Navbar() {
 						<CloudIcon />
 						<div className="ml-1">
 							<h1 className="font-semibold text-x3 tracking-tight text-black">
-								Weather App
+								Mulet.se
 							</h1>
 						</div>
 					</div>
